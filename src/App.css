@@ -1,0 +1,253 @@
+/* src/App.css */
+
+/* Reset Básico para garantir consistência entre navegadores */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ececec; /* SEU FUNDO PADRÃO PARA OUTRAS PÁGINAS */
+    color: #333;
+    line-height: 1.6;
+
+    /* Adicione transição suave para o background-color */
+    transition: background-color 0.5s ease;
+    transition: background-image 0.5s ease; /* Adicionar também para imagem */
+}
+
+/* Estilos para o body SOMENTE quando a classe 'login-background' está presente */
+body.login-background {
+    background-image: url("https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    /* Opcional: Adicione um overlay escuro para melhorar a legibilidade do texto global */
+    /* Este overlay precisaria de um elemento div adicional na raiz do App ou um pseudo-elemento mais complexo no body */
+    /* Por simplicidade, se o texto ficar ilegível, você pode ajustar as cores do formulário ou usar um overlay no App.tsx */
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Estilos para o contêiner principal do App */
+.App {
+    text-align: center;
+    min-height: 100vh; /* Garante que o App ocupe pelo menos a altura da viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para o cabeçalho (definido no App.tsx) */
+.App-header {
+    background-color: #ffffff; /* Fundo branco para o cabeçalho */
+    padding: 15px 30px; /* Mais padding para um visual mais espaçoso */
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra mais suave e proeminente */
+    display: flex;
+    justify-content: space-between; /* Alinha o logo/texto à esquerda e botões à direita */
+    align-items: center; /* Centraliza os itens verticalmente */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+    gap: 20px; /* Espaçamento maior entre os grupos de itens do cabeçalho */
+}
+
+/* Contêiner para os botões do cabeçalho quando autenticado */
+.App-header .authenticated-actions {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os botões */
+    align-items: center;
+}
+
+/* Estilos para o grupo de logo/texto no cabeçalho */
+.App-header .LogoDiv {
+    display: flex;
+    align-items: center;
+
+}
+
+.App-header .Logo {
+    color: black; /* Cor do texto "Moro Burguer" */
+    font-size: 2.2em; /* Tamanho maior para o nome */
+    font-weight: 100;
+    margin: 0;
+    font-family: Bahnschrift;
+    letter-spacing: -1px; /* Ajuste para dar um toque especial */
+}
+
+.App-header .LogoDiv img {
+    width: 100px;
+    rotate: 40deg;
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+}
+
+
+/* Estilos básicos para botões (você pode criar componentes Button separados depois) */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    transform: translateY(-1px); /* Pequeno efeito ao passar o mouse */
+    opacity: 0.95;
+}
+
+button:active {
+    transform: translateY(0); /* Volta ao normal ao clicar */
+}
+
+button:disabled {
+    background-color: #cccccc !important;
+    cursor: not-allowed;
+}
+
+/* Estilos específicos para os botões do cabeçalho */
+.App-header button {
+    background-color: #a80101; /* Cor para os botões (Logout, Dashboard) */
+    color: white;
+}
+
+.App-header button:hover {
+    background-color: #710000; /* Escurece no hover */
+}
+
+
+/* Estilos para o corpo principal (onde os produtos e formulários aparecem) */
+main {
+    flex-grow: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
+    padding: 20px;
+    background-color: #fcfcfc;
+}
+
+/* Você também pode colocar aqui os estilos globais que antes estavam inline no App.tsx ou outros componentes */
+/* Exemplo de estilo para um card (se você usar na ProdutoLista, por exemplo) */
+.product-card {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Estilo para formulários */
+.formProduto {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 30px auto;
+    text-align: left; /* Alinha o texto do formulário à esquerda */
+}
+
+.formProduto label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.formProduto input[type="text"],
+.formProduto input[type="number"],
+.formProduto input[type="password"],
+.formProduto select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    font-size: 1em;
+}
+
+.formProduto input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.formProduto button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    width: 100%;
+}
+
+.formProduto button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para a mensagem de erro (no LoginForm, por exemplo) */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Estilos para o modal (se você tiver um) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto; /* Permite scroll se o conteúdo for grande */
+    position: relative;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #888;
+}
+
+.modal-close-button:hover {
+    color: #333;
+}
+
+/* Responsividade para o cabeçalho */
+@media (max-width: 600px) {
+    .App-header {
+        flex-direction: column; /* Empilha itens em telas pequenas */
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .App-header .LogoDiv {
+        flex-direction: column; /* Empilha logo e imagem */
+        gap: 5px;
+    }
+
+    .App-header .authenticated-actions {
+        width: 100%; /* Ocupa a largura total */
+        justify-content: center; /* Centraliza os botões */
+        gap: 10px;
+    }
+}

@@ -1,0 +1,278 @@
+/* src/components/GerenciarProdutos.css */
+
+.gerenciar-produtos-container {
+    padding: 30px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Aumentado para acomodar os botões */
+    margin: 40px auto;
+    color: #333;
+    position: relative; /* Para o overlay de loading */
+}
+
+.gerenciar-produtos-container h2 {
+    color: #000000;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+}
+
+.gerenciar-produtos-container p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* --- Mensagens de sucesso e erro --- */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+    font-weight: bold;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    font-weight: bold;
+}
+
+/* --- Overlay de carregamento --- */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: #a80101;
+    z-index: 10;
+    border-radius: 10px;
+}
+
+/* --- Lista de Produtos --- */
+.produtos-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.produto-item {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between; /* Alinha info à esquerda e ações à direita */
+    align-items: center;
+    font-size: 1.05em;
+    color: #444;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    gap: 15px; /* Espaço entre info e actions */
+}
+
+.produto-item:hover {
+    background-color: #e2e6ea;
+}
+
+/* Estilo para produtos desabilitados */
+.produto-item.disabled-product {
+    opacity: 0.6;
+    background-color: #ffe0e0;
+    border-color: #ffb3b3;
+}
+
+.produto-info {
+    text-align: left;
+    flex-grow: 1; /* Ocupa o máximo de espaço possível */
+}
+
+.produto-info strong {
+    color: #000000;
+    font-size: 1.1em;
+}
+
+.produto-info small {
+    display: block; /* Cada small em sua própria linha */
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Estilos de status (disponível/indisponível) */
+.produto-item .status {
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.status.available {
+    background-color: #d4edda;
+    color: #28a745;
+}
+
+.status.unavailable {
+    background-color: #f8d7da;
+    color: #dc3545;
+}
+
+/* --- Ações do Produto --- */
+.produto-actions {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões de ação */
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+    justify-content: flex-end; /* Alinha à direita */
+}
+
+.produto-actions button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.produto-actions button:hover {
+    transform: translateY(-1px);
+}
+
+.edit-button {
+    background-color: #a80101;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #710000;
+}
+
+.toggle-disponibilidade-button.disable { /* Botão para DESABILITAR */
+    background-color: #323232;
+    color: #ffffff;
+}
+
+.toggle-disponibilidade-button.disable:hover {
+    background-color: #000000;
+}
+
+.toggle-disponibilidade-button.enable { /* Botão para HABILITAR */
+    background-color: #28a745;
+    color: white;
+}
+
+.toggle-disponibilidade-button.enable:hover {
+    background-color: #218838;
+}
+
+
+
+/* --- Estilos para o formulário de edição dentro do modal --- */
+.produto-edit-form {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.produto-edit-form h3 {
+    text-align: center;
+    color: #a80101;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.produto-edit-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #555;
+}
+
+.produto-edit-form input[type="text"],
+.produto-edit-form input[type="number"],
+.produto-edit-form textarea,
+.produto-edit-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.produto-edit-form input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.produto-edit-form .form-actions {
+    margin-top: 30px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.produto-edit-form .form-actions button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.produto-edit-form .form-actions button[type="submit"] {
+    background-color: #a80101;
+    color: white;
+    border: none;
+}
+
+.produto-edit-form .form-actions button[type="submit"]:hover {
+    background-color: #710000;
+}
+
+.produto-edit-form .form-actions button[type="button"] { /* Cancelar */
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.produto-edit-form .form-actions button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+/* Responsividade básica para itens de produto */
+@media (max-width: 768px) {
+    .produto-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .produto-info, .produto-actions {
+        width: 100%;
+    }
+    .produto-actions {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}

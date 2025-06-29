@@ -1,0 +1,96 @@
+/* src/components/AdminDashboard.css */
+
+.admin-dashboard {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9; /* Fundo suave para o dashboard */
+    min-height: calc(100vh - 70px); /* Altura mínima, considerando o header de 70px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+}
+
+.admin-dashboard h1 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+}
+
+.admin-dashboard p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.dashboard-sections {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as seções quebrem a linha */
+    justify-content: center;
+    gap: 30px; /* Espaçamento entre as seções */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 900px; /* Largura máxima para as seções */
+}
+
+.dashboard-section-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    flex: 1; /* Permite que os cards se expandam */
+    min-width: 280px; /* Largura mínima para os cards */
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre título e botão */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-section-card h3 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.dashboard-section-card p {
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+}
+
+.dashboard-section-card button {
+    background-color: #a80101; /* Cor verde para os botões de ação */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%; /* Botão ocupa 80% da largura do card */
+    max-width: 200px;
+}
+
+.dashboard-section-card button:hover {
+    background-color: #710000;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .dashboard-sections {
+        flex-direction: column; /* Pilha os cards em telas menores */
+        align-items: center;
+    }
+    .dashboard-section-card {
+        width: 90%; /* Ocupa mais largura em telas pequenas */
+        max-width: unset; /* Remove max-width para melhor preenchimento */
+    }
+}

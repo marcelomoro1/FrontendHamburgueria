@@ -1,0 +1,147 @@
+/* src/components/LoginForm.css */
+
+/* Removido o estilo 'body' daqui! */
+
+.LogoDiv {
+    display: flex;
+}
+
+.Logo {
+    font-family: Bahnschrift;
+    font-weight: 100;
+    font-size: 40px;
+    margin: 5px;
+    padding-left: 2rem;
+}
+
+.LogoDiv img {
+    margin-left: 1rem;
+    width: 4rem;
+    rotate: 70deg;
+}
+
+.App-header {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.login-container {
+    /* Mantenha os estilos base do container do formulário */
+    background-color: rgba(255, 255, 255, 0.9); /* Um fundo branco semi-transparente para legibilidade */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 380px;
+    width: 90%;
+    margin: 50px auto;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+
+    /* REMOVIDO: background-image e related properties daqui */
+    /* REMOVIDO: position: relative; e overflow: hidden; se não forem mais necessários */
+    /* REMOVIDO: O pseudo-elemento ::before e seus estilos */
+    /* Ajuste a cor do texto do formulário para preto/cinza padrão, já que o fundo do container é claro */
+    color: #333;
+}
+
+/* Reverter cores de texto e input para o padrão do formulário, já que o container tem fundo claro */
+.login-container h2 {
+    color: #333; /* Título escuro */
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.form-group label {
+    color: #555; /* Labels padrão */
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #fff; /* Fundo dos inputs branco sólido */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #333; /* Texto dentro do input escuro */
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: #007bff; /* Borda azul ao focar */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.error-message {
+    color: #dc3545; /* Vermelho padrão para mensagens de erro */
+    margin-bottom: 15px;
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.login-button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #a80101; /* Vermelho vibrante para o botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #710000; /* Vermelho mais escuro no hover */
+}
+
+.login-button:disabled {
+    background-color: #a0c2ed;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.register-text {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #555; /* Cor para o texto normal */
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.register-text a {
+    color: #007bff; /* Cor para o link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade básica (opcional) */
+@media (max-width: 480px) {
+    .login-container {
+        margin: 20px auto;
+        padding: 20px;
+        width: 95%;
+    }
+
+    .login-container h2 {
+        font-size: 1.6em;
+    }
+
+    .login-button {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+}

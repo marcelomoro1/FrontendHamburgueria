@@ -1,0 +1,203 @@
+/* src/components/MeusPedidosPage.css */
+
+.meus-pedidos-container {
+    padding: 30px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+    color: #333;
+}
+
+.meus-pedidos-container h2 {
+    color: #a80101; /* Vermelho vibrante */
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meus-pedidos-container p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* Mensagens de erro/sucesso (pode reutilizar as de GerenciarProdutos.css) */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    font-weight: bold;
+}
+
+/* Lista de Pedidos */
+.pedidos-list {
+    margin-top: 30px;
+    display: grid;
+    gap: 25px; /* Espaço entre os cards de pedidos */
+}
+
+.pedido-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px 25px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pedido-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.pedido-header h3 {
+    margin: 0;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+/* Estilos para o status do pedido */
+.pedido-card .status {
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px; /* Borda mais arredondada */
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: white; /* Cor do texto padrão para status */
+}
+
+.status.pendente {
+    background-color: #ffc107; /* Amarelo */
+    color: #333;
+}
+.status.preparando {
+    background-color: #007bff; /* Azul */
+}
+.status.finalizado {
+    background-color: #28a745; /* Verde */
+}
+.status.cancelado {
+    background-color: #dc3545; /* Vermelho */
+}
+
+.pedido-card p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #444;
+}
+
+.pedido-card p strong {
+    color: #000;
+}
+
+.pedido-card h4 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #a80101; /* Vermelho vibrante */
+    font-size: 1.2em;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 5px;
+}
+
+.itens-list {
+    list-style: none;
+    padding: 0;
+}
+
+.item-pedido {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.item-pedido:last-child {
+    border-bottom: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .meus-pedidos-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .meus-pedidos-container h2 {
+        font-size: 2em;
+    }
+
+    .pedido-card {
+        padding: 15px 20px;
+    }
+
+    .pedido-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .pedido-header h3 {
+        font-size: 1.3em;
+    }
+
+    .pedido-card .status {
+        width: fit-content; /* Ajusta a largura ao conteúdo */
+    }
+
+    .item-pedido {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }
+}
+
+.meus-pedidos-header-with-button {
+    display: flex;
+    justify-content: space-between; /* Alinha o título à esquerda e o botão à direita */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 20px; /* Espaço abaixo do cabeçalho */
+}
+
+.meus-pedidos-header-with-button h2 {
+    margin: 0; /* Remove margem padrão do h2 para melhor alinhamento */
+    flex-grow: 1; /* Permite que o h2 ocupe o espaço restante */
+    text-align: left; /* Alinha o título à esquerda */
+}
+
+.back-button2 {
+    background-color: #a80101; /* Uma cor azul padrão */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Em caso de ser um link, remove sublinhado */
+    margin-bottom: 2rem;
+
+}
+
+.back-button2:hover {
+    background-color: #710000;
+}

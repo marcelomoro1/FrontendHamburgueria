@@ -1,0 +1,174 @@
+/* src/components/CarrinhoModal.css */
+
+.carrinho-modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh; /* Limita a altura para modais muito grandes */
+    overflow-y: auto; /* Adiciona scroll se o conteúdo for maior que a altura máxima */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Centraliza o título e botões */
+    color: #333; /* Cor de texto padrão */
+}
+
+.carrinho-modal-content h2 {
+    color: #a80101; /* Um tom de roxo para o título do carrinho */
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.carrinho-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    border-top: 1px solid #eee; /* Linha divisória */
+}
+
+.carrinho-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee; /* Linha divisória entre itens */
+    text-align: left;
+    gap: 15px; /* Espaçamento entre os elementos do item */
+}
+
+.carrinho-item:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.item-image {
+    width: 80px; /* Tamanho da imagem do produto */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.item-details {
+    flex-grow: 1; /* Ocupa o espaço restante */
+}
+
+.item-details h3 {
+    margin: 0 0 5px 0;
+    color: #555;
+    font-size: 1.2em;
+}
+
+.item-details p {
+    margin: 0 0 5px 0;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.quantity-control button {
+    background-color: #737373;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.quantity-control button:hover {
+    background-color: #353535;
+}
+
+.quantity-control input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 0;
+    font-size: 1em;
+}
+
+.remove-item-button {
+    background-color: #dc3545; /* Vermelho para remover */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    margin-left: 10px;
+}
+
+.remove-item-button:hover {
+    background-color: #c82333;
+}
+
+.carrinho-summary-modal {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #a80101; /* Linha destacada para o total */
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #a80101;
+}
+
+.finalize-purchase-button {
+    background-color: #28a745; /* Verde para finalizar */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.finalize-purchase-button:hover {
+    background-color: #218838;
+}
+
+.close-modal-button {
+    background-color: #6c757d; /* Cinza para fechar */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.close-modal-button:hover {
+    background-color: #5a6268;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .carrinho-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .item-image {
+        margin-bottom: 10px;
+    }
+
+    .remove-item-button {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
