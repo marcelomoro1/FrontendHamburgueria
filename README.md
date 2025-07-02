@@ -1,6 +1,6 @@
 # 🍔 FrontendHamburgueria - MoroBurger
 
-Sistema de e-commerce para restaurantes, desenvolvido com React, TypeScript, Vite e integração completa com backend via API REST. Permite gerenciamento de produtos, pedidos, autenticação de usuários (cliente e admin), carrinho de compras e painel administrativo.
+Sistema de delivery para restaurantes ou lanchonetes, desenvolvido com React, TypeScript, Vite e integração completa com backend via API REST. Permite gerenciamento de produtos, pedidos, autenticação de usuários (cliente e admin), carrinho de compras e painel administrativo.
 
 ---
 
