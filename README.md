@@ -97,10 +97,5 @@ Sistema de e-commerce para restaurantes, desenvolvido com React, TypeScript, Vit
 
 ---
 
-## 📝 Licença
-
-MIT
-
----
 
 > Projeto desenvolvido para fins didáticos e demonstração de arquitetura moderna em React + TypeScript.
