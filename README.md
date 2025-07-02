@@ -35,8 +35,8 @@ Sistema de e-commerce para restaurantes, desenvolvido com React, TypeScript, Vit
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/moro-burger.git
-   cd moro-burger
+   git clone https://github.com/marcelomoro1/FrontendHamburgueria.git
+   cd FrontendHamburgueria
    ```
 
 2. **Instale as dependências:**
