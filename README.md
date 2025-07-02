@@ -67,12 +67,15 @@ Sistema de e-commerce para restaurantes, desenvolvido com React, TypeScript, Vit
 
 ## 🧩 Principais Componentes
 
-- `ProdutoLista`: Lista de produtos e integração com carrinho.
-- `CarrinhoModal`: Visualização e edição do carrinho.
-- `CheckoutPage`: Finalização de compra.
-- `LoginForm` / `RegisterForm`: Autenticação e cadastro.
-- `AdminDashboard`, `GerenciarProdutos`, `GerenciarPedidos`: Painéis administrativos.
-- `MeusPedidosPage`: Histórico do usuário autenticado.
+- `ProdutoLista`: Lista de produtos, integração com carrinho e feedback visual.
+- `CarrinhoModal`: Visualização e edição do carrinho em modal.
+- `CheckoutPage`: Finalização de compra com resumo do pedido.
+- `LoginForm` / `RegisterForm`: Autenticação e cadastro de usuários.
+- `AdminDashboard`: Painel administrativo com atalhos para gestão.
+- `GerenciarProdutos`: CRUD de produtos com modais e feedback.
+- `GerenciarPedidos`: Visualização e atualização de pedidos.
+- `MeusPedidosPage`: Histórico de pedidos do usuário autenticado.
+- `Modal`: Componente reutilizável para janelas modais.
 
 ---
 
@@ -84,9 +87,13 @@ Sistema de e-commerce para restaurantes, desenvolvido com React, TypeScript, Vit
 
 ---
 
-## 🤝 Contribuição
+## Informações extras
 
-Pull requests são bem-vindos! Siga o padrão de código, escreva commits claros e descreva suas mudanças.
+- **Hot Reload:** O Vite garante recarregamento instantâneo ao salvar arquivos.
+- **TypeScript estrito:** O projeto usa tipagem forte para evitar bugs.
+- **React Query:** Use para cache e atualização automática de dados.
+- **Context API:** Centraliza autenticação e roles do usuário.
+- **CSS modular:** Cada componente tem seu próprio arquivo de estilo.
 
 ---
 
