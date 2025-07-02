@@ -16,7 +16,7 @@ Sistema de e-commerce para restaurantes, desenvolvido com React, TypeScript, Vit
 - **CSS Modules** (estilização modular)
 - **JWT** (autenticação segura)
 
----
+--- 
 
 ## ⚙️ Funcionalidades
 
