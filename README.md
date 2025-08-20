@@ -2,6 +2,7 @@
 
 Sistema de delivery para restaurantes ou lanchonetes, desenvolvido com React, TypeScript, Vite e integração completa com backend via API REST. Permite gerenciamento de produtos, pedidos, autenticação de usuários (cliente e admin), carrinho de compras e painel administrativo.
 
+BACKEND: https://github.com/marcelomoro1/BackendHamburgueria
 ---
 
 ## 🚀 Tecnologias Utilizadas
